@@ -1,22 +1,22 @@
 #ifndef DICTIONNAIRE_H
 #define DICTIONNAIRE_H
 
-#include "types.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <malloc.h>
-#include <string.h>
+	#include <stdio.h>
 
 	//Arbre * dictionnaire;
-	Liste * tete_liste = NULL;
-	Liste * fin_liste = NULL;
+	Liste * tete_liste;
+	Liste * fin_liste;
 
 	// Initialise un dictionnaire avec toutes les monoséquences
 	void Initialiser();
-	/*
+	
 	// Ajoute la séquence d'octets prefixe.mono, affecte son code
 	void Inserer (Code prefixe, Code mono, Code *code);
 	
+	void Inserer2 (Sequence sequence);
+
+	int EstPresent (Code code);
+
 	//Renvoi la Sequence associé au Code passé en paramètre
 	Sequence rechercheSeq(Code monCode);
 
@@ -24,6 +24,6 @@
 	Sequence CodeVersChaine (Code code, int *longueur);
 
 	// Renvoie le code associé à séquence
-	Code SequenceVersCode (Sequence sequence);*/
+	Code SequenceVersCode (Sequence sequence);
 
 #endif

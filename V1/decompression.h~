@@ -1,8 +1,8 @@
-#include "types.h"
-#include "dictionnaire.h"
-#include <stdio.h>
+#ifndef DECOMPRESSION_H
+#define DECOMPRESSION_H
 
 char * char_to_string(char c);
 
 void decompression(FILE *entree,FILE *sortie);
 
+#endif

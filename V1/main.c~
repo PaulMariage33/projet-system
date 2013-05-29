@@ -1,0 +1,54 @@
+#include "types.h"
+#include "dictionnaire.h"
+#include "compression.h"
+#include "decompression.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <malloc.h>
+#include <string.h>
+
+int binaire_to_decimal(Code i)
+{
+	int val=0;
+	int puissance;
+	int mask=0x1;
+	int maskCode=i;
+	for(puissance=0;puissance<8;puissance++)
+	{	
+		printf("La valeur du maskCode est : %d\n",maskCode);
+		int valeurBit=mask&maskCode;
+		printf("La valeur du bit est : %d\n",valeurBit);
+		val=val+valeurBit*pow(2.0,(float)puissance);
+		printf("La valeur est : %d\n",val);
+		maskCode=maskCode>>1;
+	}
+
+	return val;
+	
+}
+
+int main(int argc, char * argv[])
+{
+	/*FILE * f_e = NULL;
+	FILE * f_i = NULL;
+	//FILE * f_s = NULL;
+
+	f_e = fopen(argv[1],"r");
+	f_i = fopen(argv[2],"w");
+	//f_s = fopen(argv[3],"w");
+
+	//compression(f_e,f_i);
+	//fclose(f_i);
+
+	f_i = fopen(argv[2],"r");
+	decompression(f_e,f_i);
+
+	fclose(f_e);
+	fclose(f_i);
+	//fclose(f_s);
+
+	return 0;
+	*/
+	printf("La valeur de 8 en decimal est %d",binaire_to_decimal(8));
+}

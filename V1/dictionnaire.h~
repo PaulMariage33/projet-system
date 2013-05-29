@@ -1,11 +1,7 @@
 #ifndef DICTIONNAIRE_H
 #define DICTIONNAIRE_H
 
-#include "types.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <malloc.h>
-#include <string.h>
 
 	//Arbre * dictionnaire;
 	Liste * tete_liste = NULL;

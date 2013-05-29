@@ -1,0 +1,23 @@
+CC=gcc
+EXEC=main
+SRC=dictionnaire.c compression.c decompression.c main.c
+OBJ=$(SRC:.c=.o)
+
+all : $(EXEC)
+
+$(EXEC): $(OBJ)
+	$(CC) -o $@ $^
+
+dictionnaire.o: dictionnaire.h types.h
+
+compression.o: compression.h dictionnaire.h types.h
+
+main.o: decompression.h compression.h dictionnaire.h types.h
+
+decompression.o: decompression.h dictionnaire.h types.h
+
+clean:
+	rm -rf *.o
+
+mrproper: clean
+	rm -rf $(EXEC)
